@@ -1,6 +1,6 @@
 # Security Operations Lab for Windows Server 2022
 
-Dette er en startpakke for et gjennomforbart SOC-prosjekt i skolelab der elevene bygger, drifter, overvaker og dokumenterer et Windows-miljo. Opplegget er laget for IT-elever som har tilgang til datamaskiner, Windows-klienter og et labnettverk.
+Prosjektet gir deg muligheten til å bygge en liten, realistisk SOC-lab som bruker Windows Server 2022. De må sette opp domene, koble nettverket til klient-PC-er, samle logger og bruke et enkelt dashboard for å bruke ekte hendelser fra eget labmiljø.
 
 Prosjektet er utvidet slik at den kan dekke alle kjerneelementene:
 
