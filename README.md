@@ -2,7 +2,7 @@
 
 Dette er en startpakke for et gjennomforbart SOC-prosjekt i skolelab der elevene bygger, drifter, overvaker og dokumenterer et Windows-miljo. Opplegget er laget for IT-elever som har tilgang til datamaskiner, Windows-klienter og et labnettverk.
 
-Prosjektpakken er utvidet slik at den kan dekke alle kjerneelementene:
+Prosjektet er utvidet slik at den kan dekke alle kjerneelementene:
 
 - etikk, lovverk og yrkesutovelse
 - IT-stotte og kommunikasjon
