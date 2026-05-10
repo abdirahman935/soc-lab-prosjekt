@@ -12,18 +12,15 @@ Prosjektet er utvidet slik at den kan dekke alle kjerneelementene:
 
 ## Kort anbefaling
 
-Kjernemodellen bor vaere:
+Kjernemodellen bor vøre:
 
 - `SRV-DC01`: AD DS, DNS og eventuelt DHCP
 - `SRV-FILE01`: filserver, delte mapper, NTFS/share-permissions og feilretting
 - `SRV-SOC01`: Windows Event Collector, Windows Admin Center, JSON-eksport og valgfri Python/React-del
 - `PC-01` og `PC-02`: domeneklienter for brukere, GPO-testing og hendelser
 
-Hvis maskinene er svake, kan `SRV-FILE01` og `SRV-SOC01` slas sammen til en server.
 
-## Viktig om "gratis"
 
-Windows Server 2022 er ikke gratis permanent, men Microsoft tilbyr en offisiell evaluering som utgaar etter 180 dager. For skolelab er det ofte nok for en periode eller et semester, men planlegg snapshots eller reinstallasjon.
 
 ## Verktøy som passer godt
 
@@ -83,7 +80,7 @@ Forslag til subnett: `192.168.50.0/24`
 
 ## Praktisk rekkefolge
 
-1. Installer `SRV-DC01` og opprett domenet.
+1. Sett opp`SRV-DC01` og opprett domenet.
 2. Legg `SRV-FILE01`, `SRV-SOC01` og klientene inn i domenet.
 3. Installer og konfigurer WEC pa `SRV-SOC01`.
 4. Rull ut Sysmon og PowerShell-logging pa klienter og servere.
