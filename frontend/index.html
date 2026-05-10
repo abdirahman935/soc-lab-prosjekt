@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOC Dashboard</title>
+    <!-- En vanlig CSS-fil. Ingen Vite eller byggetrinn brukes her. -->
+    <link rel="stylesheet" href="./styles.css?v=2026-05-10-1" />
+    <!-- React lastes direkte i nettleseren via import map. -->
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@19.2.0",
+          "react-dom/client": "https://esm.sh/react-dom@19.2.0/client"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- React-tegningen skjer inne i denne boksen. -->
+    <div id="root"></div>
+    <!-- app.js er hovedfila for frontend. -->
+    <script type="module" src="./app.js?v=2026-05-10-1"></script>
+  </body>
+</html>

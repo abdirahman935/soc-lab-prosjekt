@@ -1,0 +1,447 @@
+:root {
+  /* Her samles farger og grunnverdier som brukes flere steder i layouten. */
+  --bg: #f6fbfd;
+  --panel: rgba(255, 255, 255, 0.95);
+  --panel-soft: #fbfdff;
+  --line: rgba(96, 126, 160, 0.18);
+  --text: #19324c;
+  --muted: #617c96;
+  --accent: #128aa0;
+  --accent-soft: #e4f7fa;
+  --danger: #cb5d45;
+  --warning: #c48800;
+  --ok: #25865d;
+  --shadow: 0 18px 42px rgba(74, 103, 134, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --font-heading: "Avenir Next", "Trebuchet MS", sans-serif;
+  --font-body: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(18, 138, 160, 0.08), transparent 22rem),
+    radial-gradient(circle at top right, rgba(255, 211, 145, 0.18), transparent 18rem),
+    linear-gradient(180deg, #f9fcfe 0%, #eef6fb 52%, #f7fbfd 100%);
+}
+
+.page-shell {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero {
+  /* Dette er toppfeltet med oppgavetekst til venstre og statusfelt til høyre. */
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.9fr);
+  gap: 1.25rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-copy,
+.hero-side,
+.panel,
+.summary-card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  padding: 2rem;
+  background:
+    linear-gradient(135deg, rgba(228, 247, 250, 0.85), rgba(255, 255, 255, 0.98)),
+    var(--panel);
+}
+
+.eyebrow,
+.panel-kicker,
+.meta-label,
+.summary-label,
+.state-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+.hero h1,
+.panel h2,
+.summary-value,
+.metric-value,
+.focus-item h3,
+.service-role {
+  font-family: var(--font-heading);
+}
+
+.hero h1 {
+  margin: 0.45rem 0 0.9rem;
+  font-size: clamp(1.75rem, 3.2vw, 3rem);
+  line-height: 1.02;
+}
+
+.hero-text {
+  margin: 0;
+  max-width: 48rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.hero-side {
+  padding: 1.1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.state-card {
+  border-radius: 22px;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+}
+
+.state-card strong {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 1.15rem;
+  color: #214260;
+}
+
+.state-live {
+  background: #ebfbf4;
+  border-color: rgba(37, 134, 93, 0.18);
+}
+
+.state-waiting {
+  background: #fff8e8;
+  border-color: rgba(196, 136, 0, 0.2);
+}
+
+.meta-stack {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.meta-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1rem 1.1rem;
+  background: var(--panel-soft);
+}
+
+.meta-card strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.02rem;
+  color: #214260;
+}
+
+.notice-banner {
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(196, 136, 0, 0.22);
+  background: #fff7e4;
+  color: #7d5c00;
+  border-radius: 20px;
+  padding: 0.95rem 1rem;
+  box-shadow: var(--shadow);
+}
+
+.summary-grid {
+  /* Disse fire kortene gir elevene en rask oversikt før de ser på detaljene. */
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.summary-card {
+  padding: 1.1rem;
+}
+
+.summary-value {
+  display: block;
+  margin: 0.45rem 0 0.35rem;
+  font-size: clamp(1.8rem, 2vw, 2.4rem);
+}
+
+.summary-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.dashboard-grid {
+  /* Dette er hovedområdet der panelene plasseres i et rutenett. */
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.panel {
+  grid-column: span 4;
+  padding: 1.2rem;
+}
+
+.panel-wide {
+  grid-column: span 8;
+}
+
+.panel-full {
+  grid-column: 1 / -1;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.panel-header h2 {
+  margin: 0.2rem 0 0;
+  font-size: 1.35rem;
+}
+
+.status-pill,
+.service-status,
+.machine-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.status-pill {
+  padding: 0.5rem 0.8rem;
+  font-size: 0.84rem;
+}
+
+.severity-high,
+.status-stopped {
+  background: #ffe5de;
+  color: #8f4027;
+  border: 1px solid rgba(203, 93, 69, 0.18);
+}
+
+.severity-medium {
+  background: #fff3d0;
+  color: #8a6600;
+  border: 1px solid rgba(196, 136, 0, 0.18);
+}
+
+.severity-low,
+.status-running {
+  background: #e6f7ef;
+  color: #1d6a48;
+  border: 1px solid rgba(37, 134, 93, 0.18);
+}
+
+.metric-grid {
+  /* Her vises nøkkeltallene som kommer inn fra JSON-dataene. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.9rem;
+}
+
+.metric-card,
+.focus-item,
+.service-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--panel-soft);
+  padding: 1rem;
+}
+
+.metric-label,
+.metric-subtext,
+.service-meta,
+.focus-item p,
+.empty-state,
+.event-message {
+  color: var(--muted);
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.86rem;
+}
+
+.metric-value {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: clamp(1.9rem, 2vw, 2.4rem);
+}
+
+.metric-subtext {
+  margin: 0.45rem 0 0;
+  line-height: 1.5;
+}
+
+.focus-list,
+.service-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.focus-item h3,
+.service-role {
+  margin: 0;
+  font-size: 1rem;
+  color: #214260;
+}
+
+.focus-item p {
+  margin: 0.45rem 0 0;
+  line-height: 1.55;
+}
+
+.machine-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.machine-pill {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--line);
+}
+
+.machine-server {
+  background: #e9f7fb;
+  color: #1b6171;
+}
+
+.machine-client {
+  background: #f5f8ff;
+  color: #345576;
+}
+
+.service-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.service-meta {
+  margin: 0.35rem 0 0;
+}
+
+.service-status {
+  min-width: 5.5rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.table-wrap {
+  /* Tabellen kan bli bred, så denne boksen gjør at den kan scrolle på mindre skjermer. */
+  overflow: auto;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+
+table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+th,
+td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(96, 126, 160, 0.12);
+  vertical-align: top;
+}
+
+th {
+  background: #edf8fb;
+  color: var(--accent);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+td {
+  font-size: 0.94rem;
+  color: #244562;
+}
+
+tbody tr:hover {
+  background: #f6fbfd;
+}
+
+.event-message {
+  max-width: 34rem;
+  line-height: 1.45;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 1rem;
+  border: 1px dashed var(--line);
+  border-radius: 20px;
+  background: #fbfdff;
+  line-height: 1.6;
+}
+
+@media (max-width: 1080px) {
+  /* På mindre skjermer forenkler vi layouten slik at panelene blir lettere å lese. */
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .panel,
+  .panel-wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-shell {
+    width: min(100% - 1rem, 100%);
+    padding-top: 1rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy,
+  .hero-side,
+  .panel,
+  .summary-card {
+    border-radius: 22px;
+  }
+
+  .hero-copy,
+  .hero-side,
+  .panel {
+    padding: 1rem;
+  }
+
+  th,
+  td {
+    padding: 0.8rem;
+  }
+}

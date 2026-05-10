@@ -1,0 +1,41 @@
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>*</HashAlgorithms>
+  <EventFiltering>
+    <ProcessCreate onmatch="include">
+      <Image condition="end with">powershell.exe</Image>
+      <Image condition="end with">pwsh.exe</Image>
+      <Image condition="end with">cmd.exe</Image>
+      <Image condition="end with">wscript.exe</Image>
+      <Image condition="end with">cscript.exe</Image>
+      <Image condition="end with">mshta.exe</Image>
+      <Image condition="end with">rundll32.exe</Image>
+      <Image condition="end with">wmic.exe</Image>
+      <Image condition="end with">certutil.exe</Image>
+      <Image condition="end with">psexec.exe</Image>
+      <Image condition="end with">nmap.exe</Image>
+    </ProcessCreate>
+    <NetworkConnect onmatch="include">
+      <Image condition="end with">powershell.exe</Image>
+      <Image condition="end with">pwsh.exe</Image>
+      <Image condition="end with">cmd.exe</Image>
+      <Image condition="end with">certutil.exe</Image>
+      <Image condition="end with">nmap.exe</Image>
+    </NetworkConnect>
+    <FileCreate onmatch="include">
+      <TargetFilename condition="contains">\AppData\Local\Temp\</TargetFilename>
+      <TargetFilename condition="contains">\Downloads\</TargetFilename>
+      <TargetFilename condition="contains">\Startup\</TargetFilename>
+    </FileCreate>
+    <RegistryEvent onmatch="include">
+      <TargetObject condition="contains">\Run\</TargetObject>
+      <TargetObject condition="contains">\RunOnce\</TargetObject>
+    </RegistryEvent>
+    <DnsQuery onmatch="include">
+      <Image condition="end with">powershell.exe</Image>
+      <Image condition="end with">pwsh.exe</Image>
+      <Image condition="end with">cmd.exe</Image>
+      <Image condition="end with">certutil.exe</Image>
+      <Image condition="end with">nmap.exe</Image>
+    </DnsQuery>
+  </EventFiltering>
+</Sysmon>

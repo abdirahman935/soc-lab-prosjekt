@@ -1,0 +1,20 @@
+<QueryList>
+  <Query Id="0" Path="Security">
+    <Select Path="Security">*[System[(EventID=4625 or EventID=4740)]]</Select>
+  </Query>
+  <Query Id="1" Path="System">
+    <Select Path="System">*[System[(EventID=7031 or EventID=7034)]]</Select>
+  </Query>
+  <Query Id="2" Path="Microsoft-Windows-GroupPolicy/Operational">
+    <Select Path="Microsoft-Windows-GroupPolicy/Operational">*[System[(EventID=1058 or EventID=1030)]]</Select>
+  </Query>
+  <Query Id="3" Path="Microsoft-Windows-Windows Defender/Operational">
+    <Select Path="Microsoft-Windows-Windows Defender/Operational">*[System[(EventID &gt;= 1116 and EventID &lt;= 1119)]]</Select>
+  </Query>
+  <Query Id="4" Path="Microsoft-Windows-Sysmon/Operational">
+    <Select Path="Microsoft-Windows-Sysmon/Operational">*[System[(EventID=1 or EventID=3 or EventID=11 or EventID=13 or EventID=22)]]</Select>
+  </Query>
+  <Query Id="5" Path="Microsoft-Windows-PowerShell/Operational">
+    <Select Path="Microsoft-Windows-PowerShell/Operational">*</Select>
+  </Query>
+</QueryList>

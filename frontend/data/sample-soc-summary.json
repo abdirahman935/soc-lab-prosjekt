@@ -1,0 +1,22 @@
+{
+  "generatedAt": "",
+  "environment": {
+    "domain": "Ikke koblet til domene ennå",
+    "collectorServer": "SRV-SOC01",
+    "monitoredComputers": [],
+    "source": "Lokal eksempelfil",
+    "dataMode": "sample"
+  },
+  "metrics": {
+    "failedLogonsLastWindow": 0,
+    "lockedAccountsLastWindow": 0,
+    "serviceFailuresLastWindow": 0,
+    "gpoIssuesLastWindow": 0,
+    "defenderAlertsLastWindow": 0,
+    "sysmonEventsLastWindow": 0
+  },
+  "alerts": [],
+  "serverStatus": [],
+  "machineActivity": [],
+  "recentEvents": []
+}
