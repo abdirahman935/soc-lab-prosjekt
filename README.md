@@ -3,6 +3,7 @@
 Security Operations Lab for Windows Server 2022
 Prosjektet gir deg muligheten til å bygge en liten, realistisk SOC-lab som bruker Windows Server 2022. De må sette opp domene, koble nettverket til klient-PC-er, samle logger og bruke et enkelt dashboard for å bruke ekte hendelser fra eget labmiljø.
 
+
 Prosjektet er utvidet slik at den kan dekke alle kjerneelementene:
 
 etikk, lovverk og yrkesutovelse
@@ -10,8 +11,10 @@ IT-stotte og kommunikasjon
 losningsarkitektur og systemutvikling
 informasjonssikkerhet
 utviklingsprosesser og kreativ problemlosing
-Kort anbefaling
-Kjernemodellen bor vøre:
+
+
+Kjernemodellen bør innholde:
+
 
 SRV-DC01: AD DS, DNS og eventuelt DHCP
 SRV-FILE01: filserver, delte mapper, NTFS/share-permissions og feilretting
@@ -26,8 +29,10 @@ Sysinternals Suite
 Microsoft Defender Antivirus
 Wireshark
 Nmap
+
 PowerShell 5.1 eller PowerShell 7
 Forslag til læringsmal
+
 Bygg domenet og grunnleggende drift.
 Herd klienter og servere med GPO, kontolasing, rettigheter og logging.
 Samle hendelser sentralt med WEF/WEC.
@@ -35,7 +40,11 @@ Eksporter hendelser til JSON med PowerShell.
 Bygg et lite dashboard i React uten Vite, og eventuelt et tynt Python-API.
 Kjor to til seks hendelser som elevene ma oppdage, analysere og rette.
 Foreslatt arkitektur
+
+
 Navn	Rolle	Forslag
+
+
 SRV-DC01	Domenekontroller	AD DS, DNS, DHCP, OU-struktur, brukergrupper
 SRV-FILE01	Applikasjon og filserver	Mapper, deling, rettigheter, brukerstottefeil
 SRV-SOC01	SOC collector	WEC, Windows Admin Center, JSON-eksport, valgfri API/app
@@ -49,9 +58,6 @@ Hva som ligger i denne mappen
 
 ## Innhold i mappen
 
-- [Laboppsett](./docs/laboppsett.md)
-- [Verktoy og nedlasting](./docs/verktoy-og-nedlasting.md)
-- [Hendelser og vurdering](./docs/hendelser-og-vurdering.md)
 - [Incident-mal](./docs/incident-mal.md)
 - [Kjerneelementer og ekstra leveranser](./docs/kjerneelementer-og-ekstra-leveranser.md)
 - [Etikk og personvern-mal](./docs/etikk-og-personvern-mal.md)
@@ -70,7 +76,7 @@ Hva som ligger i denne mappen
 
 ## Praktisk rekkefolge
 
-1. Installer `SRV-DC01` og opprett domenet.
+1. sett opp `SRV-DC01` og opprett domenet.
 2. Legg `SRV-FILE01`, `SRV-SOC01` og klientene inn i domenet.
 3. Installer og konfigurer WEC pa `SRV-SOC01`.
 4. Rull ut Sysmon og PowerShell-logging pa klienter og servere.
